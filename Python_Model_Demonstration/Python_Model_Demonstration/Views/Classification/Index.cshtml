@@ -1,0 +1,130 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    FetalHealthInput input = (FetalHealthInput)ViewData["Input"];
+    double output = Convert.ToDouble(ViewData["Message"]);
+    string finalOutcome = "";
+
+    switch (output)
+    {
+        case 1.0:
+            finalOutcome = "Normal";
+            break;
+        case 2.0:
+            finalOutcome = "At Risk";
+            break;
+        case 3.0:
+            finalOutcome = "Pathological";
+            break;
+    }
+}
+
+<h2 class="mt-3">Predict Fetal Health</h2>
+
+<form-group class="container">
+    <form method="post" action="/Classification/RetrieveOutcome" id="form">
+        <fieldset>
+            <label for="bpm">Heartbeats per Minute (Baseline)</label>
+            <input type="number" name="bpm" class="form-control" value=@input.bpm />
+        </fieldset>
+        <fieldset>
+            <label for="acceleration">Heart Acceleration</label>
+            <input type="number" name="acceleration" class="form-control" value=@input.acceleration step="0.001"/>
+        </fieldset>
+        <fieldset>
+            <label for="fetal_movement">Number of Fetal movement per second</label>
+            <input type="number" name="fetal_movement" class="form-control" value=@input.fetal_movement step="0.001"/>
+        </fieldset>
+        <fieldset>
+            <label for="uterine_contractors">Number of uterine contractions per second</label>
+            <input type="number" name="uterine_contractors" class="form-control" value=@input.uterine_contractors step="0.001"/>
+        </fieldset>
+        <fieldset>
+            <label for="light_decelerations">Number of light heart decelerations per second</label>
+            <input type="number" name="light_decelerations" class="form-control" value=@input.light_decelerations step="0.001"/>
+        </fieldset>
+        <fieldset>
+            <label for="severe_decelerations">Number of severe heart decelerations per second</label>
+            <input type="number" name="severe_decelerations" class="form-control" value=@input.severe_decelerations step="0.001"/>
+        </fieldset>
+        <fieldset>
+            <label for="prolonged_decelerations">Number of prolonged heart decelerations per second</label>
+            <input type="number" name="prolonged_decelerations" class="form-control" value=@input.prolonged_decelerations step="0.001"/>
+        </fieldset>
+        <fieldset>
+            <label for="abnormal_st_variability">Percentage of time with abnormal short term variability (Heart Deceleration)</label>
+            <input type="number" name="abnormal_st_variability" class="form-control" value=@input.abnormal_st_variability />
+        </fieldset>
+        <fieldset>
+            <label for="mean_st_variability">Mean value of short term variability (Heart Deceleration)</label>
+            <input type="number" name="mean_st_variability" class="form-control" value=@input.mean_st_variability step="0.001"/>
+        </fieldset>
+        <fieldset>
+            <label for="percent_lt_variability">Percentage of time with abnormal long term variability (Heart Deceleration)</label>
+            <input type="number" name="percent_lt_variability" class="form-control" value=@input.percent_lt_variability />
+        </fieldset>
+        <fieldset>
+            <label for="mean_lt_variability">Mean value of long term variability (Heart Deceleration)</label>
+            <input type="number" name="mean_lt_variability" class="form-control" value=@input.mean_lt_variability step="0.001"/>
+        </fieldset>
+        <fieldset>
+            <label for="histo_width">Width of Fetal Heart Rate histogram</label>
+            <input type="number" name="histo_width" class="form-control" value=@input.histo_width />
+        </fieldset>
+        <fieldset>
+            <label for="histo_min">Minimum (low frequency) of Fetal Heart Rate histogram</label>
+            <input type="number" name="histo_min" class="form-control" value=@input.histo_min />
+        </fieldset>
+        <fieldset>
+            <label for="histo_max">Maximum (high frequency) of Fetal Heart Rate histogram</label>
+            <input type="number" name="histo_max" class="form-control" value=@input.histo_max />
+        </fieldset>
+        <fieldset>
+            <label for="histo_peaks">Number of histogram peaks</label>
+            <input type="number" name="histo_peaks" class="form-control" value=@input.histo_peaks />
+        </fieldset>
+        <fieldset>
+            <label for="no_of_zeroes">Number of histogram zeros</label>
+            <input type="number" name="no_of_zeroes" class="form-control" value=@input.no_of_zeroes />
+        </fieldset>
+        <fieldset>
+            <label for="histo_mode">Histogram mode</label>
+            <input type="number" name="histo_mode" class="form-control" value=@input.histo_mode />
+        </fieldset>
+        <fieldset>
+            <label for="histo_mean">Histogram mean</label>
+            <input type="number" name="histo_mean" class="form-control" value=@input.histo_mean />
+        </fieldset>
+        <fieldset>
+            <label for="histo_median">Histogram median</label>
+            <input type="number" name="histo_median" class="form-control" value=@input.histo_median />
+        </fieldset>
+        <fieldset>
+            <label for="histo_variance">Histogram variance</label>
+            <input type="number" name="histo_variance" class="form-control" value=@input.histo_variance />
+        </fieldset>
+        <fieldset>
+            <label for="histo_tendency">Histogram tendency</label>
+            <input type="number" name="histo_tendency" class="form-control" value=@input.histo_tendency />
+        </fieldset>
+        <br />
+        <fieldset>
+            <input type="submit" class="btn btn-success" id="submitBtn" value="Submit" style="float:right" />
+        </fieldset>
+    </form>
+</form-group>
+<br />
+<br />
+@{
+    if (output != default)
+    {
+        <div class="container">
+            <h2>Predicted Outcome</h2>
+            <fieldset>
+                <input type="text" name="outcome" value=@finalOutcome class="form-control" />
+            </fieldset>
+        </div>
+    }
+}
