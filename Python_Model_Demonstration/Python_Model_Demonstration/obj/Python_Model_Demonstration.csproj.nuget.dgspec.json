@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration.csproj": {}
+    "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demo_Server\\Python_Model_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration.csproj": {
+    "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demo_Server\\Python_Model_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration.csproj",
+        "projectUniqueName": "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demo_Server\\Python_Model_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration.csproj",
         "projectName": "Python_Model_Demonstration",
-        "projectPath": "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration.csproj",
+        "projectPath": "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demo_Server\\Python_Model_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration.csproj",
         "packagesPath": "C:\\Users\\LM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demonstration\\Python_Model_Demonstration\\Python_Model_Demonstration\\obj\\",
+        "outputPath": "C:\\Users\\LM\\Documents\\GitHub\\ASP_Python_Demo_Server\\Python_Model_Demonstration\\Python_Model_Demonstration\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LM\\AppData\\Roaming\\NuGet\\NuGet.Config",

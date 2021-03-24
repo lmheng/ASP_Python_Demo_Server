@@ -29,7 +29,7 @@ namespace Python_Model_Demonstration.Controllers
                     string xValue = predModel.ToString();
 
                     // send a GET request to the server uri with the data and get the response as HttpResponseMessage object
-                    System.Net.Http.HttpResponseMessage res = await client.GetAsync("http://127.0.0.1:5000/random_forest_regression?x=" + xValue);
+                    System.Net.Http.HttpResponseMessage res = await client.GetAsync("https://python-flask-api-demo.herokuapp.com/random_forest_regression?x=" + xValue);
 
                     // Return the result from the server if the status code is 200 (everything is OK)
                     // should raise exception or error if it's not
