@@ -6,4 +6,4 @@ There are two models used for demonstration here:
 1) Random Forest Classification - deployed on Heroku
 2) Random Forest Regression - deployed on Heroku
 
-Python source code has been uploaded to a separate repository here:
+Python source code has been uploaded to a separate repository here: <a href="https://github.com/lmheng/ASP_Python_Flask_Demo">link</a>
